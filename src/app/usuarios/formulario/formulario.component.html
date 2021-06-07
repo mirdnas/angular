@@ -1,0 +1,44 @@
+<form  [formGroup]="formUsuario" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control" name="nome" id="nome" maxlength="50" formControlName="nome" required>
+    <span *ngIf="formUsuario.controls.name.dirty && formUsuario.controls.name.errors?.required">
+      Name is required.
+    </span>
+  </div>
+
+  <div class="form-group">
+    <label for="sobrenome">Sobrenome</label>
+    <input type="text" class="form-control" name="sobrenome" id="sobrenome" formControlName="sobrenome"  maxlength="50" required>
+  </div>
+
+  <div class="form-group">
+    <label for="dataNascimento">Data de nascimento</label>
+    <input type="date" class="form-control" name="dataNascimento" id="dataNascimento" formControlName="dataNascimento">
+  </div>
+
+  <div class="form-group">
+    <label for="celular">Celular</label>
+    <input type="text" class="form-control" name="celular" id="celular" required  formControlName="celular">
+  </div>
+
+  <div class="form-group">
+    <label for="email">E-mail</label>
+    <input type="email" class="form-control" name="email" id="email"  required  formControlName="email">
+  </div>
+
+  <div class="form-group">
+    <label for="curriculo"></label>
+    <input
+      formControlName="curriculo"
+      id="curriculo"
+      type="file"
+      class="form-control"
+      formControlName="curriculo"
+      >
+  </div>
+
+  <input type="submit" class="btn btn-primary mt-4" value="Salvar">
+
+</form>
